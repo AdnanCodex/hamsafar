@@ -50,7 +50,7 @@ export default function LoginPage() {
         <button className="btn outline" style={{ width: '100%', marginTop: 10 }} onClick={signUp}>Create Account</button>
         <button className="btn outline" style={{ width: '100%', marginTop: 10 }} onClick={google}>G&nbsp; Continue with Google</button>
         {msg && <p style={{ marginTop: 12, color: '#64748B', lineHeight: 1.5 }}>{msg}</p>}
-        <p style={{ color: '#64748B', fontSize: 12, marginTop: 12 }}>Phone OTP: turn on the Phone provider in Supabase Dashboard → Authentication → Providers, then the OTP flow will be added here. Email + Google are ready in this build.</p>
+        <p style={{ color: '#64748B', fontSize: 12, marginTop: 12 }}>{supabaseConfigured ? 'Email + Google sign-in are ready in this build. Phone OTP: turn on the Phone provider in Supabase Dashboard → Authentication → Providers, then the OTP flow will be added here.' : 'Email + Google sign-in will activate once Supabase is connected. Phone OTP needs the Phone provider in Supabase Dashboard → Authentication → Providers.'}</p>
       </div>
     </div>
   );
