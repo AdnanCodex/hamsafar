@@ -121,14 +121,6 @@ export default function LoginPage() {
     router.push('/dashboard');
   }
 
-  async function google() {
-    if (!supabaseConfigured || !supabase) {
-      setMsg(t('login_demo_google'));
-      return;
-    }
-    await supabase.auth.signInWithOAuth({ provider: 'google' });
-  }
-
   return (
     <div className="container" style={{ paddingTop: 40, maxWidth: 480 }}>
       <div className="card">
@@ -140,7 +132,6 @@ export default function LoginPage() {
             <input className="input" style={{ marginTop: 10 }} type="password" placeholder={t('login_pass_ph')} value={password} onChange={(e) => setPassword(e.target.value)} />
             <button className="btn" style={{ width: '100%', marginTop: 14 }} onClick={signIn}>{t('login_signin')}</button>
             <button className="btn outline" style={{ width: '100%', marginTop: 10 }} onClick={signUp}>{t('login_create')}</button>
-            <button className="btn outline" style={{ width: '100%', marginTop: 10 }} onClick={google}>G&nbsp; {t('login_google')}</button>
             <button style={{ background: 'none', border: 'none', color: '#0C6B3F', cursor: 'pointer', marginTop: 14, fontSize: 14 }} onClick={() => { setMsg(''); setMode('forgot'); }}>{t('login_forgot')}</button>
             <button style={{ background: 'none', border: 'none', color: '#0C6B3F', cursor: 'pointer', marginTop: 8, fontSize: 14 }} onClick={() => { setMsg(''); setMode('magic'); }}>{t('login_magic')}</button>
           </>
