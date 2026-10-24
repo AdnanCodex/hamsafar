@@ -9,11 +9,9 @@ export default function SideMenu() {
   const LINKS = [
     { href: '/', label: t('nav_home') },
     { href: '/find', label: t('nav_find') },
-    { href: '/offer', label: t('nav_offer') },
     { href: '/recommendations', label: t('nav_recommendations') },
     { href: '/safety', label: t('nav_safety') },
     { href: '/sos', label: t('nav_sos') },
-    { href: '/dashboard', label: t('nav_dashboard') },
   ];
   return (
     <>
@@ -27,10 +25,6 @@ export default function SideMenu() {
         {LINKS.map((l) => (
           <Link key={l.href} href={l.href} className="dlink" onClick={() => setOpen(false)}>{l.label}</Link>
         ))}
-        <div style={{ marginTop: 14, display: 'grid', gap: 10 }}>
-          <Link href="/login" onClick={() => setOpen(false)}><button className="btn outline" style={{ width: '100%' }}>{t('nav_login')}</button></Link>
-          <Link href="/login" onClick={() => setOpen(false)}><button className="btn" style={{ width: '100%' }}>{t('nav_signup')}</button></Link>
-        </div>
       </div>
     </>
   );
