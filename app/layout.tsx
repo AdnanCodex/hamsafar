@@ -1,5 +1,6 @@
 import './globals.css';
 import Link from 'next/link';
+import SideMenu from '@/components/SideMenu';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <header>
           <div className="nav">
+            <SideMenu />
             <Link href="/" className="brand">
               <img src="/logo.png" alt="Hamsafar" style={{ height: 42, width: 'auto', objectFit: 'contain', flexShrink: 0 }} />
               <span><b>Hamsafar</b><small>Safe Rides • Shared Journeys</small></span>
