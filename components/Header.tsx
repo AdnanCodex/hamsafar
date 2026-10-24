@@ -18,9 +18,7 @@ export default function Header() {
         <nav className="navlinks">
           <Link href="/">{t('nav_home')}</Link>
           <Link href="/find">{t('nav_find')}</Link>
-          <Link href="/offer">{t('nav_offer')}</Link>
           <Link href="/safety">{t('nav_safety')}</Link>
-          <Link href="/dashboard">{t('nav_dashboard')}</Link>
         </nav>
         <div className="navright">
           <div className="langwrap">
@@ -41,8 +39,6 @@ export default function Header() {
               </>
             )}
           </div>
-          <Link href="/login"><button className="btn outline">{t('nav_login')}</button></Link>
-          <Link href="/login"><button className="btn">{t('nav_signup')}</button></Link>
           <Link href="/dashboard"><div className="avatar">A</div></Link>
         </div>
       </div>
