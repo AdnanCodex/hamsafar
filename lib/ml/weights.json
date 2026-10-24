@@ -1,0 +1,52 @@
+{
+  "version": "logistic-regression-v1-coldstart",
+  "trained_at": "2026-10-24T10:54:24.050Z",
+  "features": [
+    "routeMatch",
+    "timeMatch",
+    "pricePerKm",
+    "driverRating",
+    "seatsLeft",
+    "verified",
+    "womenMatch",
+    "driverTrips"
+  ],
+  "weights": [
+    0.30224652881914427,
+    0.32582933637126926,
+    -0.3055031360702554,
+    0.17020521142360986,
+    0.025937098485609943,
+    0.1251292796770893,
+    0.12941506887409024,
+    -0.03913245362900734
+  ],
+  "bias": -2.6906927650690275,
+  "mean": [
+    0.6414687500000064,
+    0.637656250000006,
+    33.49747166696034,
+    4.248176623901745,
+    2.066875,
+    0.669375,
+    0.4971875,
+    151.4534375
+  ],
+  "std": [
+    0.3722596107200379,
+    0.35261187137692285,
+    14.55372918290408,
+    0.432683344284109,
+    1.3954937242334402,
+    0.4704382099436718,
+    0.4071527229968383,
+    86.75119066579768
+  ],
+  "metrics": {
+    "train_accuracy": 0.933,
+    "holdout_accuracy": 0.941,
+    "train_n": 3200,
+    "test_n": 800
+  },
+  "provenance": "Cold-start seed data labelled by a documented rule (see scripts/train-recommendations.ts). NOT real user booking data. Retrain on /api/feedback outcomes when live data exists."
+}
