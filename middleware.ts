@@ -1,23 +1,13 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-// Route protection (authorization) — browser pages ke liye.
-// Supabase session cookies (sb-*-auth-token) check hoti hain; na hon to /login.
-// Note: API routes apna token check khud karti hain (lib/auth.ts), kyunke
-// wahan Bearer token aata hai, cookie nahi.
-const PROTECTED_PAGES = ['/offer', '/dashboard'];
-
+// Route protection REMOVED at the owner's request (2026-10-24): login
+// and signup were taken off the website, so no page may redirect users
+// to a login form anymore. Previously this file redirected /offer and
+// /dashboard to /login when no Supabase session cookie was present.
+// To restore login gating, restore the previous middleware from git
+// history together with the login page (backups/hamsafar-login-page-20261024.tsx).
 export function middleware(req: NextRequest) {
-  const { pathname } = req.nextUrl;
-  const needsAuth = PROTECTED_PAGES.some((p) => pathname === p || pathname.startsWith(p + '/'));
-  if (!needsAuth) return NextResponse.next();
-  const hasSession = req.cookies.getAll().some((c) => c.name.includes('-auth-token'));
-  if (!hasSession) {
-    const url = req.nextUrl.clone();
-    url.pathname = '/login';
-    url.searchParams.set('next', pathname);
-    return NextResponse.redirect(url);
-  }
   return NextResponse.next();
 }
 
