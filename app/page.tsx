@@ -53,9 +53,9 @@ export default function Home() {
               { from: 'Mansehra', to: 'Abbottabad', img: '/hero.jpg', tag: 'Hazara, KPK' },
               { from: 'Abbottabad', to: 'Islamabad', img: '/route2.jpg', tag: 'Hazara → Capital' },
               { from: 'Peshawar', to: 'Islamabad', img: '/route3.jpg', tag: 'KPK → Capital' },
-              { from: 'Lahore', to: 'Islamabad', img: '/hero.jpg', tag: 'Punjab → Capital' },
-              { from: 'Karachi', to: 'Hyderabad', img: '/route2.jpg', tag: 'Sindh' },
-              { from: 'Islamabad', to: 'Murree', img: '/route3.jpg', tag: 'Capital → Hills' },
+              { from: 'Lahore', to: 'Islamabad', img: '/route-lahore-islamabad.jpg', tag: 'Punjab → Capital' },
+              { from: 'Karachi', to: 'Hyderabad', img: '/route-karachi-hyderabad.jpg', tag: 'Sindh' },
+              { from: 'Islamabad', to: 'Murree', img: '/route-islamabad-murree.jpg', tag: 'Capital → Hills' },
             ].map((r) => (
               <div key={`${r.from}-${r.to}`} className="routecard"><img src={r.img} alt={`${r.from} to ${r.to}`} /><div className="rc"><div style={{ display: 'flex', justifyContent: 'space-between' }}><b>{r.from} → {r.to}</b><b style={{ color: '#0C6B3F' }}>{r.tag}</b></div><small style={{ color: '#64748B' }}>Live rides, fares and ETAs on the Find page</small><br /><Link href={`/find?from=${encodeURIComponent(r.from)}&to=${encodeURIComponent(r.to)}`}><button className="btn" style={{ marginTop: 12, width: '100%' }}>View rides →</button></Link></div></div>
             ))}
